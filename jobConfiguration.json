@@ -1,0 +1,122 @@
+{
+    "$schema": "https://raw.githubusercontent.com/firstBitSemenovskaya/jenkins-lib/master/resources/schema.json",
+    "v8version": "8.3.20.1674",
+    "srcDir": "src/cf",
+    "sourceFormat": "designer",
+    "defaultBranch": "master",
+    "secrets": {
+      "storagePath": "id",
+      "storage" : "id"
+    },
+    "stages": {
+      "initSteps": false,
+      "sonarqube": true,
+      "bdd": false,
+      "syntaxCheck": false,
+      "edtValidate": false,
+      "smoke": false,
+      "email": true
+    },
+    "timeout": {
+      "smoke": 240,
+      "bdd": 120,
+      "createInfoBase": 60,
+      "designerToEdtFormatTransformation": 60,
+      "edtToDesignerFormatTransformation": 60,
+      "edtValidate": 240,
+      "initInfoBase": 60,
+      "resultTransformation": 10,
+      "sonarqube": 90,
+      "syntaxCheck": 240,
+      "zipInfoBase": 60
+    },
+    "initInfobase": {
+      "initMethod": "fromStorage",
+      "preloadDTURL": "http://profit-1c-cm-master.hq.severstalauto.com:8282/project/preload.dt",
+      "runMigration": false,
+      "vrunnerSettings": "./tools/vrunner.json",
+      "additionalInitializationSteps": []
+    },
+    "bdd": {
+      "vrunnerSteps": [
+        "vanessa --settings ./tools/vrunner.json"
+      ]
+    },
+    "sonarqube": {
+      "sonarQubeInstallation": "",
+      "useSonarScannerFromPath": true,
+      "sonarScannerToolName": "sonar-scanner",
+      "infoBaseUpdateModuleName" : ""
+    },
+    "syntaxCheck": {
+      "groupErrorsByMetadata": true,
+      "pathToJUnitReport": "./build/out/jUnit/syntax.xml",
+      "exceptionFile": "./tools/syntax-check-exception-file.txt",
+      "checkModes": [
+        "-ThinClient",
+        "-WebClient",
+        "-Server",
+        "-ExtendedModulesCheck",
+        "-IncorrectReferences",
+        "-UnreferenceProcedures",
+        "-HandlersExistence",
+        "-EmptyHandlers",
+        "-CheckUseModality",
+        "-CheckUseSynchronousCalls",
+        "-DistributiveModules"
+      ],
+      "vrunnerSettings": "./tools/vrunner.json"
+    },
+    "smoke": {
+      "vrunnerSettings": "./tools/vrunner.json",
+      "xddConfigPath": "./tools/xUnitParams.json",
+      "publishToAllureReport": true,
+      "publishToJUnitReport": true
+    },
+    "resultsTransform": {
+      "removeSupport": true,
+      "supportLevel": 0
+    },
+    "emailNotification": {
+      "onAlways": true,
+      "onFailure": true,
+      "onUnstable": false,
+      "onSuccess": false,
+      "alwaysEmailOptions": {
+        "attachLog": true,
+        "directRecipients": [
+          "1c.admins@prof-itgroup.ru"
+        ],
+        "recipientProviders": [
+          "developers",
+          "requestor"
+        ]
+      },
+      "failureEmailOptions": {
+        "attachLog": true,
+        "directRecipients": [],
+        "recipientProviders": [
+          "developers",
+          "requestor",
+          "brokenBuildSuspects"
+        ]
+      },
+      "successEmailOptions": {
+        "attachLog": false,
+        "directRecipients": [],
+        "recipientProviders": [
+          "developers",
+          "requestor"
+        ]
+      },
+      "unstableEmailOptions": {
+        "attachLog": false,
+        "directRecipients": [],
+        "recipientProviders": [
+          "developers",
+          "requestor"
+        ]
+      }
+    },
+    "logosConfig": ""
+  }

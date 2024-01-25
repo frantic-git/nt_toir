@@ -1,0 +1,33 @@
+{
+    "$schema": "https://raw.githubusercontent.com/vanessa-opensource/vanessa-runner/develop/vanessa-runner-schema.json",
+    "default": {
+        "--ibconnection": "/F./build/ib",
+        "--db-user": "Администратор",
+        "--db-pwd": "",
+        "--root": ".",
+        "--workspace": ".",
+        "--v8version": "8.3.20.1674",
+        "--locale": "ru",
+        "--language": "ru",
+        "--ordinaryapp": "-1"
+    },
+    "vanessa": {
+        "--vanessasettings": "./tools/vanessaBddConf.json",
+        "--additional": "/DisplayAllFunctions /L ru"
+    },
+    "syntax-check": {
+        "--groupbymetadata": true,
+        "--exception-file": "tools/syntax-check-excludes.txt",
+        "--junitpath": "build/out/allure/syntax-check/junit/junit.xml",
+        "--allure-results2": "build/out/allure",
+        "--mode": [
+            "-ExtendedModulesCheck",
+            "-ThinClient",
+            "-WebClient",
+            "-Server",
+            "-ExternalConnection",
+            "-ThickClientOrdinaryApplication"
+        ]
+    }
+    
+}

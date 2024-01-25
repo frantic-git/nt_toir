@@ -1,0 +1,15 @@
+*.cf
+*.cfe
+ConfigDumpInfo.xml
+CommonTemplates/**/*.bin
+ParentConfigurations.bin
+
+.env
+build/
+allure-report/
+
+build
+out
+.scannerwork
+
+.settings
