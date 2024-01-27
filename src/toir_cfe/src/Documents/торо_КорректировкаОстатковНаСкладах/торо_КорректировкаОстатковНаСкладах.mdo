@@ -12,6 +12,7 @@
   <extension xsi:type="mdclassExtension:DocumentExtension">
     <extendedConfigurationObject>Checked</extendedConfigurationObject>
     <objectModule>Extended</objectModule>
+    <numerator>Extended</numerator>
     <numberType>Extended</numberType>
     <numberLength>Extended</numberLength>
     <numberAllowedLength>Extended</numberAllowedLength>
@@ -31,7 +32,6 @@
         </types>
       </typeExtension>
     </extension>
-    <type/>
   </attributes>
   <forms uuid="eefa4a70-6594-48b2-a3b8-a425b6e37a26" extendedConfigurationObject="1aedc507-29da-41ae-b4e1-bfc792911441">
     <name>ФормаДокумента</name>

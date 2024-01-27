@@ -29,7 +29,6 @@
   <scriptVariant>Russian</scriptVariant>
   <defaultRoles>Role.проф_ОсновнаяРоль</defaultRoles>
   <defaultLanguage>Language.Русский</defaultLanguage>
-  <compatibilityMode>8.3.23</compatibilityMode>
   <languages uuid="b6bef178-e295-468e-a71e-a791b92c943e" extendedConfigurationObject="1304779b-9cbb-4496-a211-23bc55eb2b2a">
     <name>Русский</name>
     <objectBelonging>Adopted</objectBelonging>
@@ -108,6 +107,7 @@
   <commonPictures>CommonPicture.ИсторияВерсий</commonPictures>
   <commonPictures>CommonPicture.торо_КоллекцияВидыОбъектов</commonPictures>
   <commonPictures>CommonPicture.торо_Взаиморасчеты</commonPictures>
+  <commonPictures>CommonPicture.торо_НастройкиРабочегоМеста</commonPictures>
   <roles>Role.проф_ОсновнаяРоль</roles>
   <roles>Role.проф_ДобавлениеИзменениеСправочникаМоделиТСиОборудования</roles>
   <roles>Role.проф_ПросмотрСправочникаМоделиТСиОборудования</roles>
